@@ -9,7 +9,8 @@ lazy val root = (project in file("."))
 libraryDependencies ++= Seq(
       "org.mnode.ical4j" %  "ical4j"       % "4.0.0",
       "org.scalafx"      %% "scalafx"      % "23.0.1-R34",
-      "org.slf4j"        %  "slf4j-simple" % "2.0.9"
+      "org.slf4j"        %  "slf4j-simple" % "2.0.9",
+      "org.scalameta"    %% "munit"        % "1.0.0" % Test
     ),
     libraryDependencies ++= Seq("base", "controls", "fxml", "graphics", "media", "swing", "web").map(m =>
       "org.openjfx" % s"javafx-$m" % "21" classifier osName

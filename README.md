@@ -59,6 +59,15 @@ sbt run
 sbt resolves the correct JavaFX native binaries for your platform (macOS
 Intel/Apple Silicon, Linux, Windows) automatically.
 
+### Test
+
+```bash
+sbt test
+```
+
+Unit tests ([MUnit](https://scalameta.org/munit/)) cover the pure date helpers
+(`DateUtils`) and the overlapping-event column layout (`EventLayout`).
+
 ## Project structure
 
 ```
