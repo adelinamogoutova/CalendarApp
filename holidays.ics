@@ -1,0 +1,537 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//WebCal.Guru//NONSGML WebCal.Guru//FI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:FALSE
+NAME:Pyhät
+X-WR-CALNAME:Pyhät
+SOURCE:https://www.webcal.guru/fi-FI/lataa_kalenteri?calendar_instance_id=
+ 52
+URL;VALUE=URI:https://www.webcal.guru/fi-FI/tapahtumalista/holidays
+UID:1c33c87c-2903-3e75-856f-940cc15dae62
+X-WR-RELCALID:1c33c87c-2903-3e75-856f-940cc15dae62
+DESCRIPTION;LANGUAGE=fi-FI:Viralliset paikalliset vapaapäivät. Tämä luette
+ lo sisältää vain todelliset vapaapäivät. Katso Hyvä tietää -kalenterista m
+ uita huomionarvoisia tapahtumia.
+X-WR-CALDESC;LANGUAGE=fi-FI:Viralliset paikalliset vapaapäivät. Tämä luett
+ elo sisältää vain todelliset vapaapäivät. Katso Hyvä tietää -kalenterista 
+ muita huomionarvoisia tapahtumia.
+X-WR-TIMEZONE:Etc/UTC
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-PUBLISHED-TTL;VALUE=DURATION:P1W
+X-OWNER;VALUE=TEXT;CN=WebCal.Guru:mailto:guru@webcal.guru
+COLOR:#ff2600
+X-APPLE-CALENDAR-COLOR:#ff2600
+X-OUTLOOK-COLOR:#ff2600
+X-FUNAMBOL-COLOR:#ff2600
+X-LOTUS-CHARSET:UTF-8
+BEGIN:VEVENT
+UID:efb2410a-6c77-c873-2208-cddd8d63e4ba
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260403
+DTEND;VALUE=DATE:20260404
+SUMMARY;LANGUAGE=fi:Pitkäperjantai
+DESCRIPTION;LANGUAGE=fi:Pitkäperjantai on pääsiäistä edeltävä perjantai. S
+ e on Kristuksen ristiinnaulitsemis- ja kuolinpäivä ja kirkkovuoden ainoa s
+ urujuhla. Pitkäperjantai on yksi hiljaisen viikon juhlapyhistä. Koska pääs
+ iäissunnuntain varhaisin mahdollinen ajankohta on 22.3. ja myöhäisin mahdo
+ llinen 25.4.\, pitkänperjantain vastaavat päivämäärät ovat 20.3. ja 23.4. 
+ Viimeksi pitkäperjantai oli 20.3. vuonna 1818 ja seuraavan kerran 2285. Vi
+ imeksi pitkäperjantai oli 23.4. vuonna 1943 ja seuraavan kerran 2038.\n\nL
+ isätietoja\nhttps://fi.wikipedia.org/wiki/Pitk%C3%A4perjantai\n\nWikipedia
+  content re-released under CC-BY-SA.\nhttps://creativecommons.org/licenses
+ /by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.gur
+ u/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Pitk%C3%A4perjantai
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:44a1b316-0795-20fc-8956-d96a63b759ba
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260405
+DTEND;VALUE=DATE:20260406
+SUMMARY;LANGUAGE=fi:Pääsiäispäivä
+DESCRIPTION;LANGUAGE=fi:- Pääsiäispäivä\n- pääsiäinen\n\nPääsiäinen on vuo
+ sittainen kristillinen juhla\, jota vietetään Jeesuksen ylösnousemuksen ku
+ nniaksi. Ensimmäistä pääsiäispäivää eli pääsiäissunnuntaita vietetään kevä
+ tpäiväntasauksen jälkeisen täydenkuun jälkeisenä sunnuntaina\, minkä vuoks
+ i pääsiäisen ajankohta vaihtelee eri vuosina välillä 22. maaliskuuta – 25.
+  huhtikuuta. Myös pitkäperjantai ja toinen pääsiäispäivä ovat Suomessa vir
+ allisia pyhäpäiviä.\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/P%C3%A4%
+ C3%A4si%C3%A4isp%C3%A4iv%C3%A4\n\nWikipedia content re-released under CC-B
+ Y-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/\n\nTämän kalenterin
+  tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisältö luotu\nWed\, 01 
+ Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/P%C3%A4%C3%A4si%C3%A4isp%C3%A4
+ iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:cc99fc9f-3a27-821a-2308-3f0cb1c41ee8
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260406
+DTEND;VALUE=DATE:20260407
+SUMMARY;LANGUAGE=fi:Toinen pääsiäispäivä
+DESCRIPTION;LANGUAGE=fi:Toinen pääsiäispäivä on pääsiäispäivää seuraava ma
+ anantai. Päivänä muistetaan sitä\, että Raamatun mukaan ylösnoussut Jeesus
+  ilmestyi opetuslapsille ja häntä seuranneille naisille. Suomessa toinen p
+ ääsiäispäivä on laissa säädetty vapaapäivä.\n\nLisätietoja\nhttps://fi.wik
+ ipedia.org/wiki/Toinen_p%C3%A4%C3%A4si%C3%A4isp%C3%A4iv%C3%A4\n\nWikipedia
+  content re-released under CC-BY-SA.\nhttps://creativecommons.org/licenses
+ /by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.gur
+ u/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Toinen_p%C3%A4%C3%A4si%C3%A4is
+ p%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:aace7a28-76cb-333c-665a-a9d54b3ffb49
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+SUMMARY;LANGUAGE=fi:🇫🇮 Vapunpäivä
+DESCRIPTION;LANGUAGE=fi:- Vapunpäivä\n- vappu\n- virallinen liputuspäivä\n
+ \nVappu on vuosittain 1. toukokuuta vietettävä enimmäkseen länsimaalainen 
+ kansainvälinen juhlapäivä ja monissa maissa yleinen vapaapäivä. Se on kevä
+ än loppupuolen juhlapäivä sekä kansainvälinen työväen juhlapäivä. Suomessa
+  vapunpäivää aattopäivineen vietetään työväen\, ylioppilaiden ja kevään ka
+ rnevaalijuhlana. Vuodesta 1979 lähtien vappu on ollut Suomessa virallinen 
+ liputuspäivä\, suomalaisen työn päivä. Juhlapäivä on saanut nimensä pyhäst
+ ä Valburgista\, jonka muistopäivä on 1. päivä toukokuuta.\n\nLisätietoja\n
+ https://fi.wikipedia.org/wiki/Vappu\n\nWikipedia content re-released under
+  CC-BY-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/\n\nTämän kalen
+ terin tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisältö luotu\nWed\
+ , 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Vappu
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:f768ac9b-4b44-6a23-66df-1eb678a65068
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260514
+DTEND;VALUE=DATE:20260515
+SUMMARY;LANGUAGE=fi:Helatorstai
+DESCRIPTION;LANGUAGE=fi:- Helatorstai\n- Kristuksen taivaaseenastumisen pä
+ ivä\n\nHelatorstai\, toisinaan myös Kristuksen taivaaseenastumisen päivä\,
+  on vuotuinen kristillinen juhla\, jota vietetään neljäntenäkymmenentenä p
+ äivänä pääsiäisestä Jeesuksen taivaaseen­astumisen muistoksi. Taivaaseenas
+ tumisesta kerrotaan Apostolien tekojen ensimmäisessä luvussa sekä lyhyesti
+  myös Markuksen ja Luukkaan evankeliumien lopussa. Useimmissa Euroopan mai
+ ssa\, mukaan lukien Suomessa\, päivä on virallinen pyhäpäivä.\n\nLisätieto
+ ja\nhttps://fi.wikipedia.org/wiki/Helatorstai\n\nWikipedia content re-rele
+ ased under CC-BY-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/\n\nT
+ ämän kalenterin tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisältö l
+ uotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Helatorstai
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:3a8ce5d0-740e-363e-1a60-b921c4606ac4
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260524
+DTEND;VALUE=DATE:20260525
+SUMMARY;LANGUAGE=fi:Helluntai
+DESCRIPTION;LANGUAGE=fi:Helluntai on Pyhän Hengen vuodattamiselle omistett
+ u kristillinen juhlapäivä. Helluntaita vietetään seitsemän viikon kuluttua
+  pääsiäisestä ja kymmenen päivää helatorstain jälkeen. Läntisten kirkkojen
+  pääsiäissäännön mukaan helluntai on aikaisintaan 10. toukokuuta ja viimei
+ stään 13. kesäkuuta. Suomeen sana helluntai on tullut muinaisruotsin sanoi
+ sta hælgho dagher ’pyhät päivät’\; nykyruotsiksi helluntai on pingst.\n\nL
+ isätietoja\nhttps://fi.wikipedia.org/wiki/Helluntai\n\nWikipedia content r
+ e-released under CC-BY-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0
+ /\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSis
+ ältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Helluntai
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:7a7f9bf5-94a2-c3cf-0d14-67bde8696716
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20260620
+DTEND;VALUE=DATE:20260621
+SUMMARY;LANGUAGE=fi:🇫🇮 Juhannus
+DESCRIPTION;LANGUAGE=fi:- Juhannus\n- Johannes Kastajan päivä\n- Suomen li
+ pun päivä\n- virallinen liputuspäivä\n\nJuhannus on valon ja keskikesän ju
+ hla\, jota vietetään kesäkuussa kesäpäivänseisauksen tienoilla. Suomessa j
+ uhannus on yöttömän yön juhla\, kun pohjoisen napapiirin pohjoispuolella a
+ urinko ei laske lainkaan kesäpäivänseisauksena. Suomessa juhannus on myös 
+ virallinen liputuspäivä\, jolloin liputetaan koko juhannusyön ajan.\n\nLis
+ ätietoja\nhttps://fi.wikipedia.org/wiki/Juhannus\n\nWikipedia content re-r
+ eleased under CC-BY-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/\n
+ \nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisält
+ ö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Juhannus
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:6d17c06c-920c-1fb3-3a01-60d2340fcd05
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY;LANGUAGE=fi:Pyhäinpäivä
+DESCRIPTION;LANGUAGE=fi:Pyhäinpäivä\, vanhemmalta nimeltään pyhäinmiestenp
+ äivä\, on kristillinen pyhimysten\, marttyyrien ja vainajien muistopäivä. 
+ Alun perin pyhäinpäivää on vietetty 1. marraskuuta\, kuten monissa maissa 
+ edelleenkin\, mutta Suomessa sitä vietetään välille 31.10.–6.11. osuvana l
+ auantaina.\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A
+ 4iv%C3%A4\n\nWikipedia content re-released under CC-BY-SA.\nhttps://creati
+ vecommons.org/licenses/by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru 
+ https://www.webcal.guru/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +00
+ 00\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:f6dce0d9-1343-a3f6-796f-a9c6aceda93c
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY;LANGUAGE=fi:🇫🇮 Itsenäisyyspäivä
+DESCRIPTION;LANGUAGE=fi:- Itsenäisyyspäivä\n- virallinen liputuspäivä\n\nP
+ erustuu tapahtumaan 109 vuotta sitten (1917).\n\nSuomen itsenäisyyspäivä o
+ n Suomen kansallispäivä\, jota vietetään 6. joulukuuta 1917 tapahtuneen it
+ senäistymisen kunniaksi. Itsenäisyyspäivä on vakavamielinen juhla\, johon 
+ liittyy sodan ja kaatuneiden muisteleminen. Päivään liittyy monia jokavuot
+ isia perinteitä\, kuten jo ensimmäisen presidentin ajoista vietetty tasava
+ llan presidentin itsenäisyyspäivän vastaanotto\, paraateja\, soihtukulkuei
+ ta ja uudempana perinteenä Tuntemattoman sotilaan televisioesitys.\n\nLisä
+ tietoja\nhttps://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4iv%C3
+ %A4\n\nWikipedia content re-released under CC-BY-SA.\nhttps://creativecomm
+ ons.org/licenses/by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https:
+ //www.webcal.guru/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\n
+ Tilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4
+ iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:da6c4bde-3152-b4e3-9ad7-6ec2d7cfd039
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY;LANGUAGE=fi:Joulupäivä
+DESCRIPTION;LANGUAGE=fi:Joulu on vuosittainen joulukuun loppuun sijoittuva
+  juhla. Se on vanha ja yleinen juhla eri puolilla maailmaa. Kristityt viet
+ tävät joulua Jeesuksen syntymän muistoksi. Useimmissa maissa joulupukin ha
+ hmo\, joululahjat ja yhdessäolo ovat keskeinen osa joulua. Suomalaisia jou
+ luperinteitä ovat esimerkiksi sauna\, joulukirkko\, jouluruoka\, lahjat\, 
+ joulukuusi ja joulumusiikki. Joulun vietto alkaa Suomessa jo jouluaattona\
+ , mutta joulukuun 25. päivä on kuitenkin varsinainen joulupäivä.\n\nLisäti
+ etoja\nhttps://fi.wikipedia.org/wiki/Joulup%C3%A4iv%C3%A4\n\nWikipedia con
+ tent re-released under CC-BY-SA.\nhttps://creativecommons.org/licenses/by-
+ sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.guru/.\
+ n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Joulup%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:1a9a3ee4-b7c6-c128-a5d5-95729cc8964a
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY;LANGUAGE=fi:Toinen joulupäivä
+DESCRIPTION;LANGUAGE=fi:- Toinen joulupäivä\n- tapaninpäivä\n\nTapaninpäiv
+ ä eli toinen joulupäivä on joulunseudun kirkkopyhä\, ensimmäisen marttyyri
+ n Stefanoksen ja hänen myötään kaikkien marttyyrien muistopäivä. Tapaninpä
+ ivä\, 26. joulukuuta on aina ollut myös hevosten ja hevosmiesten päivä.\n\
+ nLisätietoja\nhttps://fi.wikipedia.org/wiki/Tapaninp%C3%A4iv%C3%A4\n\nWiki
+ pedia content re-released under CC-BY-SA.\nhttps://creativecommons.org/lic
+ enses/by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webca
+ l.guru/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnu
+ s\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Tapaninp%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:c666571d-e35c-f150-9649-a60158298736
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY;LANGUAGE=fi:Uudenvuodenpäivä
+DESCRIPTION;LANGUAGE=fi:Uudenvuodenpäivä on juhlapäivä\, jota vietetään 1.
+  tammikuuta\, vuoden ensimmäisenä vuorokautena. Päivää edeltää 31. jouluku
+ uta vietettävä uudenvuodenaatto. Vuoden vaihtumisen sijoitti tammikuun alk
+ uun Julius Caesar vuonna 46 eaa.\, sitä ennen roomalaiset olivat aloittane
+ et vuoden maaliskuusta.\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Uude
+ nvuodenp%C3%A4iv%C3%A4\n\nWikipedia content re-released under CC-BY-SA.\nh
+ ttps://creativecommons.org/licenses/by-sa/3.0/\n\nTämän kalenterin tarjoaa
+  WebCal.Guru https://www.webcal.guru/.\n\nSisältö luotu\nWed\, 01 Apr 2026
+  16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Uudenvuodenp%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:3293a77e-c497-23c3-e960-91a75a7d7429
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY;LANGUAGE=fi:Loppiainen
+DESCRIPTION;LANGUAGE=fi:Loppiainen on kristillinen juhlapäivä\, joka päätt
+ ää joulun pyhäpäivät. Sitä nimitetään myös Jumalan ilmestymisen juhlaksi\,
+  ja se on todennäköisesti joulua vanhempi kristillinen juhla. Loppiaista v
+ ietetään 6. tammikuuta ja se on yleinen vapaapäivä Suomessa. Suomessa lopp
+ iainen oli vuosina 1973–1991 työmarkkinajärjestöjen toivomuksesta aina lau
+ antaina\, aikaisintaan 6. ja viimeistään 12. tammikuuta. Joissakin maissa 
+ loppiaista on vietetty 1970-luvulta alkaen tammikuun ensimmäistä päivää se
+ uraavana sunnuntaina. Juhlan merkitys vaihtelee eri kirkkokunnissa.\n\nLis
+ ätietoja\nhttps://fi.wikipedia.org/wiki/Loppiainen\n\nWikipedia content re
+ -released under CC-BY-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/
+ \n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisä
+ ltö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Loppiainen
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:97f0da68-c6b9-cc77-4c33-1edc7fd885ce
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270327
+SUMMARY;LANGUAGE=fi:Pitkäperjantai
+DESCRIPTION;LANGUAGE=fi:Pitkäperjantai on pääsiäistä edeltävä perjantai. S
+ e on Kristuksen ristiinnaulitsemis- ja kuolinpäivä ja kirkkovuoden ainoa s
+ urujuhla. Pitkäperjantai on yksi hiljaisen viikon juhlapyhistä. Koska pääs
+ iäissunnuntain varhaisin mahdollinen ajankohta on 22.3. ja myöhäisin mahdo
+ llinen 25.4.\, pitkänperjantain vastaavat päivämäärät ovat 20.3. ja 23.4. 
+ Viimeksi pitkäperjantai oli 20.3. vuonna 1818 ja seuraavan kerran 2285. Vi
+ imeksi pitkäperjantai oli 23.4. vuonna 1943 ja seuraavan kerran 2038.\n\nL
+ isätietoja\nhttps://fi.wikipedia.org/wiki/Pitk%C3%A4perjantai\n\nWikipedia
+  content re-released under CC-BY-SA.\nhttps://creativecommons.org/licenses
+ /by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.gur
+ u/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Pitk%C3%A4perjantai
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:227614f6-a765-c027-6f89-ae88bd3885a9
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20270328
+DTEND;VALUE=DATE:20270329
+SUMMARY;LANGUAGE=fi:Pääsiäispäivä
+DESCRIPTION;LANGUAGE=fi:- Pääsiäispäivä\n- pääsiäinen\n\nPääsiäinen on vuo
+ sittainen kristillinen juhla\, jota vietetään Jeesuksen ylösnousemuksen ku
+ nniaksi. Ensimmäistä pääsiäispäivää eli pääsiäissunnuntaita vietetään kevä
+ tpäiväntasauksen jälkeisen täydenkuun jälkeisenä sunnuntaina\, minkä vuoks
+ i pääsiäisen ajankohta vaihtelee eri vuosina välillä 22. maaliskuuta – 25.
+  huhtikuuta. Myös pitkäperjantai ja toinen pääsiäispäivä ovat Suomessa vir
+ allisia pyhäpäiviä.\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/P%C3%A4%
+ C3%A4si%C3%A4isp%C3%A4iv%C3%A4\n\nWikipedia content re-released under CC-B
+ Y-SA.\nhttps://creativecommons.org/licenses/by-sa/3.0/\n\nTämän kalenterin
+  tarjoaa WebCal.Guru https://www.webcal.guru/.\n\nSisältö luotu\nWed\, 01 
+ Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/P%C3%A4%C3%A4si%C3%A4isp%C3%A4
+ iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+BEGIN:VEVENT
+UID:eeae51cb-591c-b2fe-082c-cd8fe49e6915
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20270329
+DTEND;VALUE=DATE:20270330
+SUMMARY;LANGUAGE=fi:Toinen pääsiäispäivä
+DESCRIPTION;LANGUAGE=fi:Toinen pääsiäispäivä on pääsiäispäivää seuraava ma
+ anantai. Päivänä muistetaan sitä\, että Raamatun mukaan ylösnoussut Jeesus
+  ilmestyi opetuslapsille ja häntä seuranneille naisille. Suomessa toinen p
+ ääsiäispäivä on laissa säädetty vapaapäivä.\n\nLisätietoja\nhttps://fi.wik
+ ipedia.org/wiki/Toinen_p%C3%A4%C3%A4si%C3%A4isp%C3%A4iv%C3%A4\n\nWikipedia
+  content re-released under CC-BY-SA.\nhttps://creativecommons.org/licenses
+ /by-sa/3.0/\n\nTämän kalenterin tarjoaa WebCal.Guru https://www.webcal.gur
+ u/.\n\nSisältö luotu\nWed\, 01 Apr 2026 16:31:17 +0000\n\nTilaustunnus\n-
+CLASS:PUBLIC
+CATEGORIES:HOLIDAY,WEBCALGURU
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Toinen_p%C3%A4%C3%A4si%C3%A4is
+ p%C3%A4iv%C3%A4
+CONTACT:guru@webcal.guru
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+PRIORITY:5
+DTSTAMP:20260401T163117Z
+STATUS:CONFIRMED
+SEQUENCE:2282
+CREATED:20260401T163117Z
+LAST-MODIFIED:20260401T163117Z
+END:VEVENT
+LAST-MODIFIED:20260401T163117Z
+END:VCALENDAR
