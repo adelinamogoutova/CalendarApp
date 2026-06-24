@@ -12,7 +12,7 @@ import scalafx.scene.text.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import scalafx.Includes.*
-import scalafx.collections.{ObservableBuffer, fillCollection}
+import scalafx.collections.ObservableBuffer
 import java.util.Locale
 import scala.collection.mutable
 
@@ -582,25 +582,16 @@ object Main extends JFXApp3:
         case Some(event: Event) =>
           if event.validate() then
             manager.addEntry(event)
-            println(s"Saved: ${event.title} at ${event.startDateTime}")
             currentDay = DateUtils.startOfDay(event.startDateTime)
             currentMonday = DateUtils.mondayOf(event.startDateTime)
             updateWeeklyView(weeklyView)
             updateDailyView(dailyView)
-          else
-            println("Invalid event data.")
-        case _ => println("Adding cancelled")
+        case _ => 
 
 
     updateWeeklyView(weeklyView)
     updateDailyView(dailyView)
 
-
-    // the view updates and saves when a calendar event is changed
-    def updateAndSave(): Unit =
-      manager.saveToFile()
-      updateWeeklyView(weeklyView)
-      updateDailyView(dailyView)
 
     val stack = new StackPane:
       layoutX = 370
@@ -686,27 +677,6 @@ object Main extends JFXApp3:
     val categoryText = new Text("Categories:"):
       font = Font.font("Arial", FontWeight.Bold, 16)
       fill = Black
-
-    val categoryList = readyCategories.map(category =>
-      new HBox(10):
-        alignment = Pos.CenterLeft
-
-        val checkBox = new CheckBox:
-          selected = true
-          onAction = _ =>
-            categoryFilters(category.name) = selected.value
-            updateWeeklyView(weeklyView)
-            updateDailyView(dailyView)
-
-        val colordot = new Circle:
-          radius = 6
-          fill = category.color
-
-        val label = new Label(category.name):
-          font = Font.font("Arial", 14)
-          textFill = Black
-
-        children.addAll(checkBox, colordot, label))
 
     val sidebarCategory = new VBox(10):
       layoutX = 125
