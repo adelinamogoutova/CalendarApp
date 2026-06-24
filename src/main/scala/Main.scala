@@ -29,7 +29,7 @@ object Main extends JFXApp3:
     visible = false
     mouseTransparent = true
 
-  val readyCategories = ObservableBuffer[Category](new Category("Study", Blue), new Category("Work", Orange), new Category("Hobby", Pink), new Category("Holiday", Red), new Category("Other", Gray))
+  val readyCategories = ObservableBuffer[Category](new Category("Study", Blue), new Category("Work", Orange), new Category("Hobby", Pink), new Category("Fitness", Green), new Category("Holiday", Red), new Category("Other", Gray))
   val categoryFilters = mutable.Map[String, Boolean]()
   readyCategories.foreach(category => categoryFilters(category.name) = true)
 
@@ -335,16 +335,13 @@ object Main extends JFXApp3:
             font = Font.font("Arial", 13)
             wrapText = true
             maxWidth = 170
-
-          val deleteButton = new Button("✕"):
-            font = Font.font("Arial", 10)
-            onAction = _ =>
+            onMouseClicked = _ =>
               reminderItems.remove(index)
               saveReminders()
 
           reminderListView.children.add(new HBox(5):
             alignment = Pos.CenterLeft
-            children.addAll(label, deleteButton))}
+            children.add(label))}
 
       refreshReminderList()
       reminderItems.onChange { refreshReminderList() }
