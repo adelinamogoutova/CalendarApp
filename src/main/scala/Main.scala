@@ -22,7 +22,6 @@ object Main extends JFXApp3:
   val manager = new CalendarManager()
 
 
-  var dragStart: Option[LocalDateTime] = None
   val selectionRect = new Rectangle:
     fill = LightBlue.opacity(0.3)
     stroke = Blue
@@ -33,9 +32,6 @@ object Main extends JFXApp3:
   val readyCategories = ObservableBuffer[Category](new Category("Study", Blue), new Category("Work", Orange), new Category("Hobby", Pink), new Category("Holiday", Red), new Category("Other", Gray))
   val categoryFilters = mutable.Map[String, Boolean]()
   readyCategories.foreach(category => categoryFilters(category.name) = true)
-
-  var currentMonday = DateUtils.mondayOf(LocalDateTime.now())
-  var currentDay = DateUtils.startOfDay(LocalDateTime.now())
 
 
   // Adding reminders
@@ -88,13 +84,10 @@ object Main extends JFXApp3:
     stage.scene = scene
     scene.setFill(Color.rgb(189,135,82))
 
-    val weeklyView = new Pane():
-      background = null
-
-    val dailyView = new Pane():
-      background = null
-
-    updateWeeklyView(weeklyView)
+    // re-renders both views; called whenever events, dates or filters change
+    def refresh(): Unit =
+      weekView.render()
+      dayView.render()
 
     // editing calendar events
     def ShowEditEventDialog(event: Event) =
@@ -130,389 +123,12 @@ object Main extends JFXApp3:
       result match
         case Some(`deleteButton`) =>
           manager.removeEntry(event)
-          updateWeeklyView(weeklyView)
-          updateDailyView(dailyView)
+          refresh()
         case Some(ButtonType.OK) =>
           event.updateDetails(nameField.text.value, descField.text.value, locField.text.value)
           manager.updateEntry(event)
-          updateWeeklyView(weeklyView)
-          updateDailyView(dailyView)
+          refresh()
         case _ =>
-
-
-    // function, that enables updating of calendar info when moving forward or backwards in time (weeks)
-    def updateWeeklyView(view: Pane): Unit =
-      weeklyView.children.clear()
-
-      val weekly = new Rectangle:
-        x = 0
-        y = 0
-        width = 1100
-        height = 800
-        fill = White
-
-      weeklyView.children += weekly
-      weeklyView.children.add(selectionRect)
-
-      val weeklyDivision = 7
-      val columnWidth = 1100 / weeklyDivision
-      // Divide the weekyl view into seven parts
-      for (i <- 1 until weeklyDivision)
-        val lineX = (i * columnWidth)
-        val divider = new Line:
-          startX = lineX
-          startY = 0
-          endX = lineX
-          endY = 800
-          stroke = Black
-          strokeWidth = 2
-        weeklyView.children += divider
-
-      // Add a horizontal divider
-      val horizontalDivider = new Line:
-       startX = 0
-       startY = 100
-       endX = 1100
-       endY = 100
-       stroke = Black
-       strokeWidth = 2
-      weeklyView.children += horizontalDivider
-
-      // Add names of the days to the weekly view
-      val days = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-      for (i <- 0 until 7)
-        val columnStartX = i * columnWidth
-        val columnCenterX = columnStartX + (columnWidth / 2)
-        val currentDay = currentMonday.plusDays(i)
-        val dateString = currentDay.format(DateTimeFormatter.ofPattern("dd.MM."))
-
-        val holidayName = manager.getHolidayName(currentDay.toLocalDate).getOrElse("")
-
-        val day = new Text:
-          text = days(i)
-          font = Font.font("Arial", FontWeight.Bold, 20)
-          fill = Black
-          x = columnCenterX - 50
-          y = 80
-
-        val holidayEntry = manager.search("").collectFirst {
-          case e: Event if e.category.name == "Holiday" && e.startDateTime.toLocalDate == currentDay.toLocalDate => e
-        }
-
-        val holidayText = new Text:
-          text = holidayName
-          font = Font.font("Arial", FontWeight.Bold, 12)
-          fill = Red
-          x = columnStartX + 5
-          y = 50
-          wrappingWidth = columnWidth - 10
-          textAlignment = TextAlignment.Center
-          onMouseClicked = (e: MouseEvent) => {
-            holidayEntry.foreach(h => ShowEditEventDialog(h))
-          }
-
-        val dateText = new Text:
-          text = dateString
-          font = Font.font("Arial", FontWeight.Bold, 20)
-          fill = Black
-          x = columnCenterX- 60
-          y = 20
-        weeklyView.children.addAll(day, holidayText, dateText)
-
-      // Divide the weekly view into 24 parts (hours)
-      for (i <- 1 until 24)
-        val lineY = 100 + (i * (700.0/24.0))
-        val dividerHours = new Line:
-          startX = 0
-          startY = lineY
-          endX = 1100
-          endY = lineY
-          stroke = Black
-          strokeWidth = 2
-        weeklyView.children += dividerHours
-
-      // Add hours of the day
-      for (i <- 0 to 23)
-        val hour = new Text:
-          text = s"$i:00"
-          font = Font.font("Arial", FontWeight.Bold, 10)
-          fill = Black
-          x = -30
-          y = (100 + (i * (700.0/24.0))) + 3
-        weeklyView.children += hour
-
-      // Add new event by painting the desired hours
-      weekly.onMousePressed = (e: MouseEvent) =>
-        val clickedRow = ((e.y-100) / (700.0/24.0)).toInt
-        val dayIndex = (e.x / columnWidth).toInt
-
-        if (clickedRow >= 0 && clickedRow < 24)
-          dragStart = Some(currentMonday.plusDays(dayIndex).withHour(clickedRow))
-          selectionRect.x = dayIndex * columnWidth
-          selectionRect.y = 100 + (clickedRow* (700.0 / 24.0))
-          selectionRect.width = columnWidth
-          selectionRect.height = (700.0 / 24.0)
-          selectionRect.visible = true
-
-      // Show what is being painted
-      weekly.onMouseDragged = (e: MouseEvent) =>
-        val clickedRow = ((e.y - 100) / (700.0 / 24.0)).toInt
-        dragStart.foreach(start =>
-          val startRow = ((selectionRect.y.value - 100) / (700.0 / 24.0)).toInt
-          val currentRow =
-            if clickedRow < 0
-              then 0
-            else if clickedRow > 23
-              then 23
-            else
-              clickedRow
-
-          val topRow = Math.min(start.getHour, currentRow)
-          val bottomRow = Math.max(start.getHour, currentRow)
-
-          selectionRect.y = 100 + (topRow * (700.0/ 24.0))
-          selectionRect.height = (bottomRow-topRow + 1) * (700.0 / 24.0))
-
-
-      weekly.onMouseReleased = (e: MouseEvent) =>
-        selectionRect.visible = false
-        val dayIndex = (e.x / columnWidth).toInt
-        val releasedRow = ((e.y-100) / (700.0/24.0)).toInt
-
-        (dragStart, releasedRow) match
-          case (Some(start), relRow) if relRow >= 0 && relRow < 24 =>
-            val end = currentMonday.plusDays(dayIndex).withHour(relRow + 1)
-            val actualStart = if start.isBefore(end) then start else end.minusHours(1)
-            val actualEnd = if start.isBefore(end) then end else start.plusHours(1)
-            val duration = java.time.Duration.between(actualStart, actualEnd).toHours.toInt
-            showAddEventDialog(actualStart, duration)
-          case _ => dragStart = None
-
-      val weekEnd = currentMonday.plusDays(7)
-      val weeklyEvents = manager.search("").collect{case e: Event => e}.
-        filter(e => e.startDateTime.isBefore(weekEnd) &&
-          e.endDateTime.isAfter(currentMonday) &&
-          categoryFilters.getOrElse(e.category.name, true) &&
-        e.category.name != "Holiday")
-
-      for (dayOffset <- 0 until 7)
-        val targetDayStart = currentMonday.plusDays(dayOffset)
-        val targetDayEnd = targetDayStart.plusDays(1)
-
-        // events visible on this day, clipped to the day's bounds
-        val dayItems = weeklyEvents.collect {
-          case event if event.startDateTime.isBefore(targetDayEnd) && event.endDateTime.isAfter(targetDayStart) =>
-            val visibleStart =
-              if event.startDateTime.isBefore(targetDayStart) then targetDayStart else event.startDateTime
-            val visibleEnd =
-              if event.endDateTime.isAfter(targetDayEnd) then targetDayEnd else event.endDateTime
-            (event, visibleStart, visibleEnd)
-        }
-
-        for ((event, visibleStart, visibleEnd, col, total) <- EventLayout.layoutColumns(dayItems))
-          val startHour = visibleStart.getHour
-          val startMinute = visibleStart.getMinute
-          val durationHours = java.time.Duration.between(visibleStart, visibleEnd).toMinutes / 60.0
-
-          val slotWidth = columnWidth.toDouble / total
-          val x = dayOffset * columnWidth + col * slotWidth
-          val y = (100+ (startHour * (700.00/24.00)) + (startMinute / 60.00 * (700.00/24.00))) - 3
-          val rectangleHeight = durationHours * (700.00/ 24.00)
-
-          val eventRectangle = new StackPane:
-            layoutX = x
-            layoutY = y
-            prefWidth = slotWidth
-            prefHeight = rectangleHeight
-            children = Seq(
-              new Rectangle:
-                width = slotWidth
-                height = rectangleHeight
-                fill = event.category.color
-                arcWidth = 10
-                arcHeight = 10,
-              new Text:
-                text = s"${event.title}"
-                font = Font.font("Arial", FontWeight.Bold, 12)
-                fill = White
-                )
-          weeklyView.children.add(eventRectangle)
-          eventRectangle.onMouseClicked = (e: MouseEvent) =>
-            ShowEditEventDialog(event)
-
-
-    // function, that enables updating of calendar info when moving forward or backwards in time (days)
-    def updateDailyView(view: Pane): Unit =
-      dailyView.children.clear()
-      val columnWidth = 1100 / 7
-       //Daily view
-      val daily = new Rectangle:
-        x = 0
-        y = 0
-        width = 1100
-        height = 800
-        fill = White
-      dailyView.children.add(daily)
-      dailyView.children.add(selectionRect)
-
-      val dailyDivision = 24
-      val rowWidth = 800 / dailyDivision
-
-      // Divide the daily view into 24 parts (hours)
-      for (i <- 1 until dailyDivision)
-        val lineY = (i * rowWidth)
-        val divider2 = new Line:
-          startX = 0
-          startY = lineY
-          endX = 1100
-          endY = lineY
-          stroke = Black
-          strokeWidth = 2
-        dailyView.children += divider2
-
-      // Add a vertical divider
-      val verticalDivider = new Line:
-         startX = 55
-         startY = 0
-         endX = 55
-         endY = 800
-         stroke = Black
-         strokeWidth = 2
-
-      dailyView.children += verticalDivider
-
-      // Add 24 hours to the daily view
-      for (i <- 0 to 23)
-        val hour = new Text:
-          text = s"$i:00"
-          font = Font.font("Arial", FontWeight.Bold, 14)
-          fill = Black
-          x = 10
-          y = i * rowWidth + 20
-        dailyView.children += hour
-
-      // Add current date to the daily view
-      val formatter = DateTimeFormatter.ofPattern("EEEE dd.MM.yyyy", Locale.ENGLISH)
-      val writeDate = new Text:
-          text = currentDay.format(formatter)
-          font = Font.font("Arial", FontWeight.Bold, 30)
-          fill = White
-          x = 400
-          y = -10
-        dailyView.children += writeDate
-
-      val holidayName = manager.getHolidayName(currentDay.toLocalDate).getOrElse("")
-
-      val holidayEntry = manager.search("").collectFirst {
-        case e: Event if e.category.name == "Holiday" && e.startDateTime.toLocalDate == currentDay.toLocalDate => e
-      }
-
-      val holidayText = new Text:
-          text = holidayName
-          font = Font.font("Arial", FontWeight.Bold, 20)
-          fill = Red
-          x = 700
-          y = -12
-          onMouseClicked = (e: MouseEvent) => {
-              holidayEntry.foreach(h => ShowEditEventDialog(h))
-            }
-        dailyView.children += holidayText
-
-      // Add new event by painting the desired hours
-      daily.onMousePressed = (e: MouseEvent) =>
-        val hourHeight = 800.0 / 24.0
-        val clickedRow = (e.y / hourHeight).toInt
-
-        if (clickedRow >= 0 && clickedRow < 24)
-          dragStart = Some(currentDay.withHour(clickedRow))
-          selectionRect.x = 60
-          selectionRect.y = clickedRow * hourHeight
-          selectionRect.width = 1000
-          selectionRect.height = hourHeight
-          selectionRect.visible = true
-
-      // Show what is being painted
-      daily.onMouseDragged = (e: MouseEvent) =>
-        val hourHeight = 800.0 / 24.0
-        val clickedRow = (e.y / hourHeight).toInt
-        dragStart.foreach(start =>
-          val currentRow =
-            if clickedRow < 0
-              then 0
-            else if clickedRow > 23
-              then 23
-            else
-              clickedRow
-
-          val topRow = Math.min(start.getHour, currentRow)
-          val bottomRow = Math.max(start.getHour, currentRow)
-
-          selectionRect.y = topRow * hourHeight
-          selectionRect.height = (bottomRow-topRow + 1) * hourHeight)
-
-      daily.onMouseReleased = (e: MouseEvent) =>
-        selectionRect.visible = false
-        val hourHeight = 800.0 / 24.0
-        val releasedRow = (e.y / hourHeight).toInt
-
-        (dragStart, releasedRow) match
-          case (Some(start), relRow) if relRow >= 0 && relRow < 24 =>
-            val end = currentDay.withHour(relRow + 1)
-            val actualStart = if start.isBefore(end) then start else end.minusHours(1)
-            val actualEnd = if start.isBefore(end) then end else start.plusHours(1)
-            val duration = java.time.Duration.between(actualStart, actualEnd).toHours.toInt
-            showAddEventDialog(actualStart, duration)
-          case _ => dragStart = None
-
-      val dayEnd = currentDay.plusDays(1)
-      val dailyEvents = manager.search("").collect{case e: Event => e}.
-        filter(e => e.startDateTime.isBefore(dayEnd) &&
-          e.endDateTime.isAfter(currentDay) &&
-          categoryFilters.getOrElse(e.category.name, true) &&
-        e.category.name != "Holiday")
-
-      // events clipped to the current day's bounds
-      val dailyItems = dailyEvents.map { event =>
-        val visibleStart =
-          if event.startDateTime.isBefore(currentDay) then currentDay else event.startDateTime
-        val visibleEnd =
-          if event.endDateTime.isAfter(dayEnd) then dayEnd else event.endDateTime
-        (event, visibleStart, visibleEnd)
-      }
-
-      val hourHeight = 800.0 / 24.0
-      val dailyWidth = 1000.0
-
-      for ((event, visibleStart, visibleEnd, col, total) <- EventLayout.layoutColumns(dailyItems))
-        val startHour = visibleStart.getHour
-        val startMinute = visibleStart.getMinute
-        val durationHours = java.time.Duration.between(visibleStart, visibleEnd).toMinutes / 60.0
-
-        val slotWidth = dailyWidth / total
-        val x = 60 + col * slotWidth
-        val y = ((startHour * hourHeight) + (startMinute / 60.00 * hourHeight))-2
-        val rectangleHeight = durationHours * hourHeight
-
-        val eventRectangle = new StackPane:
-          layoutX = x
-          layoutY = y
-          prefWidth = slotWidth
-          prefHeight = rectangleHeight
-          children = Seq(
-            new Rectangle:
-              width = slotWidth
-              height = rectangleHeight
-              fill = event.category.color
-              arcWidth = 10
-              arcHeight = 10,
-            new Text:
-              text = s"${event.title}"
-              font = Font.font("Arial", FontWeight.Bold, 12)
-              fill = White
-              )
-        dailyView.children.add(eventRectangle)
-        eventRectangle.onMouseClicked = (e: MouseEvent)
-          => ShowEditEventDialog(event)
 
 
     // New events can be added to the calendar
@@ -582,15 +198,20 @@ object Main extends JFXApp3:
         case Some(event: Event) =>
           if event.validate() then
             manager.addEntry(event)
-            currentDay = DateUtils.startOfDay(event.startDateTime)
-            currentMonday = DateUtils.mondayOf(event.startDateTime)
-            updateWeeklyView(weeklyView)
-            updateDailyView(dailyView)
-        case _ => 
+            weekView.goTo(event.startDateTime)
+            dayView.goTo(event.startDateTime)
+        case _ =>
 
 
-    updateWeeklyView(weeklyView)
-    updateDailyView(dailyView)
+    lazy val weekView: WeekView =
+      new WeekView(manager, categoryFilters, selectionRect, showAddEventDialog, ShowEditEventDialog)
+    lazy val dayView: DayView =
+      new DayView(manager, categoryFilters, selectionRect, showAddEventDialog, ShowEditEventDialog)
+
+    val weeklyView = weekView.pane
+    val dailyView = dayView.pane
+
+    refresh()
 
 
     val stack = new StackPane:
@@ -639,12 +260,8 @@ object Main extends JFXApp3:
     // button to switch to the next day/week
     val buttonNext = new Button("Next")
       buttonNext.onAction = _ =>
-      if weeklyView.isVisible then
-        currentMonday = currentMonday.plusDays(7)
-        updateWeeklyView(weeklyView)
-      else
-        currentDay = currentDay.plusDays(1)
-        updateDailyView(dailyView)
+      if weeklyView.isVisible then weekView.next()
+      else dayView.next()
 
     val sidebarNextWeek = new VBox(10):
       layoutX = 450
@@ -654,12 +271,8 @@ object Main extends JFXApp3:
     // button to switch to the previous day/week
     val buttonPrevious = new Button("Previous")
       buttonPrevious.onAction = _ =>
-      if weeklyView.isVisible then
-        currentMonday = currentMonday.minusDays(7)
-        updateWeeklyView(weeklyView)
-      else
-        currentDay = currentDay.minusDays(1)
-        updateDailyView(dailyView)
+      if weeklyView.isVisible then weekView.previous()
+      else dayView.previous()
 
     val sidebarPreviousWeek = new VBox(10):
       layoutX = 370
@@ -692,8 +305,7 @@ object Main extends JFXApp3:
             selected = categoryFilters.getOrElse(category.name, true)
             onAction = _ =>
               categoryFilters(category.name) = selected.value
-              updateWeeklyView(weeklyView)
-              updateDailyView(dailyView)
+              refresh()
 
           val categoryDot = new Circle:
             radius = 6
@@ -776,8 +388,7 @@ object Main extends JFXApp3:
           case Some(newCategory: Category) =>
             readyCategories += newCategory
             categoryFilters(newCategory.name) = true
-            updateWeeklyView(weeklyView)
-            updateDailyView(dailyView)
+            refresh()
             rebuildSidebar()
           case _ =>
 
